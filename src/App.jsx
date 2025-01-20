@@ -5,7 +5,7 @@ import About from "./sections/About";
 import Project from "./sections/Project";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
-import Experience from "./sections/Experience.Jsx";
+import Experience from "./sections/MyExperience";
 
 const App = () => {
   return (
