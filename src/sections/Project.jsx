@@ -48,7 +48,7 @@ const Project = () => {
             <p className="text-white text-2xl font-semibold animatedText">
               {currentProject.title}
             </p>
-            <p className="animatedText">{currentProject.desc}</p>
+            <p className="animatedText lg:min-h-[144px]">{currentProject.desc}</p>
           </div>
           <div className="flex items-center justify-between flex-wrap gap-5">
             <div className="flex items-center gap-3">
