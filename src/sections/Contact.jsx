@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const Contact = () => {
   const formRef = useRef();
@@ -28,12 +30,26 @@ const Contact = () => {
           from_email: form.email,
           to_email: "sirawit.boonthon@gmail.con",
           message: form.message,
+          reply_to: form.email,
         },
         "RRMyl1wu_NA9FzLaH"
       );
 
       setLoading(false);
-      alert("Your message has been sent!");
+      toast(
+        <div className="w-[300px] h-10">
+          <strong>Your message has been sent!</strong>
+        </div>,
+        {
+          position: "bottom-right",
+          style: {
+            borderRadius: "4px",
+            color: "white",
+            backgroundColor: "#00A37299",
+            display: "block",
+          },
+        }
+      );
 
       setForm({
         name: "",
@@ -43,15 +59,30 @@ const Contact = () => {
     } catch (error) {
       setLoading(false);
       console.log(error);
+      toast(
+        <div className="w-[300px] h-10">
+          <strong>Something went wrong</strong>
+          <p>Please try again</p>
+        </div>,
+        {
+          position: "bottom-center",
+          style: {
+            borderRadius: "4px",
+            color: "white",
+            backgroundColor: "#E5364B99",
+            display: "block",
+          },
+        }
+      );
     }
   };
   return (
-    <section className="c-space my-20">
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
+    <section className="c-space my-20" id="contact" >
+      <div className="relative sm:min-h-screen h-[760px] flex items-center justify-center flex-col">
         <img
           src="/assets/terminal.png"
           alt="terminal background"
-          className="absolute inset-0 min-h-screen"
+          className="absolute inset-0 sm:min-h-screen h-full"
         />
         <div className="contact-container">
           <h3 className="head-text">Let's talk</h3>
@@ -62,7 +93,7 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="mt-12 flex flex-col space-y-7"
+            className="md:mt-12 mt-5 flex flex-col md:space-y-7 gap-4"
           >
             <label className="space-y-3">
               <span className="field-label">Full Name</span>
@@ -111,6 +142,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <Toaster />
     </section>
   );
 };

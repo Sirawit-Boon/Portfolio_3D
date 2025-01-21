@@ -25,10 +25,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a
-            href="/"
+            href="#home"
             className="text-neutral-400 font-bold text-xl hover:text-white transition-colors"
           >
-            Sirawit
+            <img src="/assets/SB6.png" className="w-14 h-10 rounded-md"/>
           </a>
           <button
             onClick={toggleMenu}
@@ -46,10 +46,11 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
-      <div className={`nav-sidebar ${isOpen ? "max-h-screen" : "max-h-0"}`}><nav className="p-5">
-        <NavItems />
+      <div className={`nav-sidebar ${isOpen ? "max-h-screen" : "max-h-0"}`}>
+        <nav className="p-5">
+          <NavItems />
         </nav>
-        </div>
+      </div>
     </header>
   );
 };
