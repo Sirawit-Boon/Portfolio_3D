@@ -147,14 +147,14 @@ const About = () => {
           </div>
         </div>
         <div className="xl:col-span-1 xl:row-span-2">
-          <div className="grid-container">
+          <div className="w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-4 flex flex-col gap-2 items-start">
             <img
               src="assets/grid4.png"
               alt="grid4"
               className="w-full md:h-[150px] sm:h-[256px] h-fit object-cover sm:object-top"
             />
             <div className="space-y-2">
-              <p className="grid-subtext text-center">Contact me</p>
+              <p className="grid-headtext ">Get in touch</p>
               <div className="copy-container" onClick={handleCopy}>
                 <img
                   src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
@@ -165,6 +165,22 @@ const About = () => {
                 </p>
               </div>
             </div>
+            <a
+              href="/resume.pdf"
+              download="sirawit_boonthon.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="copy-container"
+            >
+              <img
+                src="/assets/download.png"
+                alt="download"
+                className="w-8 h-8"
+              />
+              <button className="lg:text-lg md:text-xl font-medium text-gray_gradient text-white">
+                Download Resume
+              </button>
+            </a>
           </div>
         </div>
       </div>
