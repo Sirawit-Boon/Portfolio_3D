@@ -2,6 +2,7 @@ import React from "react";
 import Globe from "react-globe.gl";
 import { useEffect, useRef, useState } from "react";
 import Button from "../components/Button";
+import { techStack } from "../constants";
 
 const About = () => {
   const globeRef = useRef();
@@ -25,41 +26,56 @@ const About = () => {
     <section className="c-space my-20" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container">
+          <div className="grid-container relative">
             <img
-              src="/assets/grid1.png"
+              src="/assets/tercartoons.png"
               alt="grid-1"
-              className="w-full sm:h-[276px] h-fit object-contain"
+              className="w-full h-[276px] object-contain"
             />
             <div>
               <p className="grid-headtext">Hi, I'm Sirawit</p>
               <p className="grid-subtext">
-                Although, I no have an experience in the Software developer but
-                I try hardest to honed my skills in frontend and backend to
-                develop web application. and that to prove I can work in this
-                postion.
+                Although I do not have experience as a Software Developer, I
+                have worked hard to hone my skills in both frontend and backend
+                development for web applications to prove that I am capable of
+                performing well in this position.
               </p>
             </div>
           </div>
         </div>
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img
-              src="assets/grid2.png"
-              alt="grid-2"
-              className="w-full sm:w-[276px] h-fit object-contain"
-            />
+            <div className="circle-container">
+              {techStack.map(({ id, name, path }, index) => {
+                const angle = (index / techStack.length) * 360;
+                return (
+                  <div
+                    key={id}
+                    className="tech-stack"
+                    style={{
+                      transform: `rotate(${angle}deg) translate(100px) rotate(-${angle}deg)`,
+                    }}
+                  >
+                    <img src={path} alt={name} />
+                  </div>
+                );
+              })}
+            </div>
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                I specialize in Javascript with a focus on React.Js and Next.Js
+                I have experience in JavaScript, with a focus on React.js and
+                Next.js. I am capable of implementing RESTful APIs for the
+                backend using Node.js and have a solid understanding of
+                relational databases, such as PostgreSQL. Additionally, I can
+                effectively integrate the backend with the frontend.
               </p>
             </div>
           </div>
         </div>
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+            <div className="rounded-3xl w-full sm:h-[276px] h-fit flex justify-center items-center">
               <Globe
                 ref={globeRef}
                 height={326}
@@ -82,11 +98,16 @@ const About = () => {
               />
             </div>
             <div>
-              <p className="grid-headtext">
-                I work remotely across most timezone.
-              </p>
+              <p className="grid-headtext">Work Flexibility & Adaptability</p>
               <p className="grid-subtext">
-                I'm based in Thailand, with remote work available.
+                I am capable of working in various setups, such as onsite,
+                hybrid, work-from-home, or remote work. I am based in Bangkok,
+                Thailand, but I am also open to working in the Bangkok
+                Metropolitan area. I can easily adapt to different work
+                environments, quickly learn new tools and technologies, and
+                collaborate effectively with diverse teams to achieve shared
+                goals. Additionally, I manage my time efficiently to meet
+                deadlines and balance multiple priorities in any work setup.
               </p>
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
@@ -97,14 +118,31 @@ const About = () => {
             <img
               src="assets/grid3.png"
               alt="grid-3"
-              className="w-full sm:h-[266px] h-fit object-contain"
+              className="w-full sm:h-[230px] h-fit object-contain"
             />
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
-              <p className="grid-subtext">
-                I love solving problems and building things through code. Coding
-                is not just my profession - it is my passion.
-              </p>
+              <div className="grid-subtext flex flex-col gap-2">
+                <p>
+                  Here goes! If you're reading this, I believe you're might
+                  already be interested about me (right?). Let me share my
+                  passion for coding and why I decided to leave the stability of
+                  being a civil servant to start a career as a software
+                  developer.
+                </p>
+                <p>
+                  I started learning to code from scratch in September 2024.
+                  Despite the short time, I quickly realized that I had found a
+                  profession that truly suits me. Coding makes me genuinely
+                  happy, and even though it's challenging and completely new to
+                  me, I've never stopped learning and exploring new tech stacks.
+                </p>
+                <p>
+                  If you've made it this far, thank you for considering me. Give
+                  me the opportunity to join your software development team, and
+                  I'll prove my worth.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +151,7 @@ const About = () => {
             <img
               src="assets/grid4.png"
               alt="grid4"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
+              className="w-full md:h-[150px] sm:h-[256px] h-fit object-cover sm:object-top"
             />
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>

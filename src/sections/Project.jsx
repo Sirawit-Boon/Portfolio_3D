@@ -23,7 +23,7 @@ const Project = () => {
     });
   };
   return (
-    <section className="c-space my-20">
+    <section className="c-space my-20" id="project">
       <p className="head-text">My Project</p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
@@ -44,13 +44,15 @@ const Project = () => {
               className="w-10 h-10 shadow-sm"
             />
           </div>
-          <div className="flex flex-col gao-5 text-white-600 my-5">
+          <div className="flex flex-col gap-5 text-white-600 my-5">
             <p className="text-white text-2xl font-semibold animatedText">
               {currentProject.title}
             </p>
-            <p className="animatedText lg:min-h-[144px]">{currentProject.desc}</p>
+            <p className="animatedText lg:min-h-[144px]">
+              {currentProject.desc}
+            </p>
           </div>
-          <div className="flex items-center justify-between flex-wrap gap-5">
+          <div className="flex flex-col items-start justify-between flex-wrap gap-5">
             <div className="flex items-center gap-3">
               {currentProject.tags.map((tag, index) => (
                 <div key={index} className="tech-logo">
@@ -67,8 +69,21 @@ const Project = () => {
               <p>Visit Live Site</p>
               <img src="/assets/arrow-up.png" className="w-3 h-3" alt="arrow" />
             </a>
+            <a
+                className="flex items-center gap-2 cursor-pointer text-white-600 z-10"
+                href={currentProject.github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>Visit GitHub</p>
+                <img
+                  src="/assets/github.svg"
+                  className="w-5 h-5"
+                  alt="arrow"
+                />
+              </a>
           </div>
-          <div className="flex justify-between items-center mt-7">
+          <div className="flex justify-between items-center mt-5">
             <button
               className="arrow-btn"
               onClick={() => handleNavigation("previous")}
@@ -97,14 +112,17 @@ const Project = () => {
             <directionalLight position={[10, 10, 5]} intensity={10} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-              <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-                <group scale={2.5} position={[0, -3, -3]} rotation={[0.15, -1.55, 0]}>
-                  <DemoComputer texture={currentProject.texture}
-                  />
+                <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+                <group
+                  scale={2.5}
+                  position={[0, -3, -3]}
+                  rotation={[0.15, -1.55, 0]}
+                >
+                  <DemoComputer texture={currentProject.texture} />
                 </group>
               </Suspense>
             </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false}/>
+            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
           </Canvas>
         </div>
       </div>

@@ -11,8 +11,8 @@ export const navLinks = [
   },
   {
     id: 3,
-    name: "Work",
-    href: "#work",
+    name: "Project",
+    href: "#project",
   },
   {
     id: 4,
@@ -63,6 +63,7 @@ export const myProjects = [
     subdesc:
       "Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.",
     href: "https://minor-cineplex-nine.vercel.app/",
+    github: "https://github.com/Thammaruthai/Minor-Cineplex",
     texture: "/textures/project/minorc.mp4",
     logo: "/assets/logo.png",
     logoStyle: {
@@ -110,6 +111,7 @@ export const myProjects = [
     subdesc:
       "With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.",
     href: "https://blogpost-sirawit.vercel.app/",
+    github:"https://github.com/Sirawit-Boon/sirawit-blogpost",
     texture: "/textures/project/Blogpost.mp4",
     logo: "/assets/blog.png",
     logoStyle: {
@@ -232,5 +234,38 @@ export const workExperiences = [
       "Coordinated communication between internal divisions, maintained inventory records and distributed supplies, and managed official correspondence with across all divisions.",
     icon: "/assets/land_thailand.png",
     animation: "salute",
+  },
+];
+
+export const techStack = [
+  {
+    id: 1,
+    name: "React.js",
+    path: "/assets/react.svg",
+  },
+  {
+    id: 2,
+    name: "Next.js",
+    path: "/assets/nextjs.png",
+  },
+  {
+    id: 3,
+    name: "TailwindCSS",
+    path: "/assets/tailwindcss.png",
+  },
+  {
+    id: 4,
+    name: "JavaScript",
+    path: "/assets/js.png",
+  },
+  {
+    id: 5,
+    name: "Node.js",
+    path: "/assets/nodejs.png",
+  },
+  {
+    id: 6,
+    name: "PostgreSQL",
+    path: "/assets/postgres.png",
   },
 ];
