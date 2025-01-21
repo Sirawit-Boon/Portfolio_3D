@@ -35,6 +35,13 @@ const Contact = () => {
         "RRMyl1wu_NA9FzLaH"
       );
 
+      // Google Analytics Event for Successful Submission
+    window.gtag("event", "submit_contact_form", {
+      event_category: "interaction",
+      event_label: "Contact Form",
+      value: 1,
+    });
+
       setLoading(false);
       toast(
         <div className="w-[300px] h-10">

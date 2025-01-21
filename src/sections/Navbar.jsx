@@ -3,6 +3,16 @@ import { useState } from "react";
 import { navLinks } from "../constants";
 
 const NavItems = ({ setIsOpen }) => {
+  const handleNavClick = (sectionName) => {
+    window.gtag("event", "navigation_click", {
+      event_category: "navigation",
+      event_label: sectionName,
+    });
+
+    if (setIsOpen) {
+      setIsOpen(false);
+    }
+  };
   return (
     <ul className="nav-ul">
       {navLinks.map(({ id, href, name }) => (
@@ -10,9 +20,7 @@ const NavItems = ({ setIsOpen }) => {
           <a
             href={href}
             className="nav-li_a"
-            onClick={() => {
-              setIsOpen(false);
-            }}
+            onClick={() => handleNavClick(name)}
           >
             {name}
           </a>
@@ -27,7 +35,6 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
-  console.log(`IsOpen:`, isOpen);
   return (
     <header className="fixed top-0 left-0 right-0 bg-black/90 z-20">
       <div className="max-w-7xl mx-auto">
