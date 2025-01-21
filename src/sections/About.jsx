@@ -17,6 +17,13 @@ const About = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText("sirawit.boonthon@gmail.com");
+
+    window.gtag("event", "email_copy", {
+      event_category: "interaction",
+      event_label: "Email Copied",
+      value: 1,
+    });
+
     setHasCopied(true);
     setTimeout(() => {
       setHasCopied(false);

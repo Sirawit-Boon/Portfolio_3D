@@ -15,13 +15,27 @@ const Project = () => {
 
   const handleNavigation = (direction) => {
     setSelectedProject((prevIndex) => {
-      if (direction === "previous") {
-        return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
-      } else {
-        return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
-      }
+      const newIndex =
+        direction === "previous"
+          ? prevIndex === 0
+            ? projectCount - 1
+            : prevIndex - 1
+          : prevIndex === projectCount - 1
+          ? 0
+          : prevIndex + 1;
+
+      // Trigger Google Analytics event
+      window.gtag("event", "project_navigation", {
+        event_category: "interaction",
+        event_label:
+          direction === "previous" ? "Previous Project" : "Next Project",
+        value: newIndex,
+      });
+
+      return newIndex;
     });
   };
+
   return (
     <section className="c-space my-20" id="project">
       <p className="head-text">My Project</p>
@@ -70,18 +84,14 @@ const Project = () => {
               <img src="/assets/arrow-up.png" className="w-3 h-3" alt="arrow" />
             </a>
             <a
-                className="flex items-center gap-2 cursor-pointer text-white-600 z-10"
-                href={currentProject.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <p>Visit GitHub</p>
-                <img
-                  src="/assets/github.svg"
-                  className="w-5 h-5"
-                  alt="arrow"
-                />
-              </a>
+              className="flex items-center gap-2 cursor-pointer text-white-600 z-10"
+              href={currentProject.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p>Visit GitHub</p>
+              <img src="/assets/github.svg" className="w-5 h-5" alt="arrow" />
+            </a>
           </div>
           <div className="flex justify-between items-center mt-5">
             <button

@@ -6,8 +6,11 @@ import Project from "./sections/Project";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import Experience from "./sections/MyExperience";
+import useAnalyticsEvents from "./hooks/useAnalyticsEvents";
 
 const App = () => {
+  useAnalyticsEvents();
+  
   return (
     <main className="max-w-7xl mx-auto">
       <Navbar />
