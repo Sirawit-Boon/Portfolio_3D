@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import HackerRoom from "../components/HackerRoom";
 import CanvasLoader from "../components/CanvasLoader";
-import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants";
 import ReactLogo from "../components/ReactLogo";
@@ -14,43 +13,6 @@ import HeroCamera from "../components/HeroCamera";
 import Button from "../components/Button";
 
 const Hero = () => {
-  // const x = useControls("CssLogo", {
-  //   positionX: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionY: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionZ: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationX: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationY: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationZ: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   scale: {
-  //     value: 1,
-  //     min: 0.01,
-  //     max: 10,
-  //   },
-  // });
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
@@ -62,7 +24,7 @@ const Hero = () => {
         <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
           Hi, I am Sirawit<span className="waving-hand">👋</span>
         </p>
-        <p className="hero_tag text-gray_gradient">Building Web Application</p>
+        <p className="hero_tag text-gray_gradient">Full Stack Developer</p>
       </div>
       <div className="w-full h-full absolute inset-0">
         {/* <Leva /> */}

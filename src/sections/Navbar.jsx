@@ -2,12 +2,18 @@ import React from "react";
 import { useState } from "react";
 import { navLinks } from "../constants";
 
-const NavItems = () => {
+const NavItems = ({ setIsOpen }) => {
   return (
     <ul className="nav-ul">
       {navLinks.map(({ id, href, name }) => (
         <li key={id} className="nav-li">
-          <a href={href} className="nav-li_a" onClick={() => {}}>
+          <a
+            href={href}
+            className="nav-li_a"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
             {name}
           </a>
         </li>
@@ -20,15 +26,17 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
+
+  console.log(`IsOpen:`, isOpen);
   return (
-    <header className="fixed top-0 left-0 right-0 bg-black/90 z-10">
+    <header className="fixed top-0 left-0 right-0 bg-black/90 z-20">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a
             href="#home"
             className="text-neutral-400 font-bold text-xl hover:text-white transition-colors"
           >
-            <img src="/assets/SB6.png" className="w-14 h-10 rounded-md"/>
+            <img src="/assets/SB6.png" className="w-14 h-10 rounded-md" />
           </a>
           <button
             onClick={toggleMenu}
@@ -48,7 +56,7 @@ const Navbar = () => {
       </div>
       <div className={`nav-sidebar ${isOpen ? "max-h-screen" : "max-h-0"}`}>
         <nav className="p-5">
-          <NavItems />
+          <NavItems setIsOpen={setIsOpen} />
         </nav>
       </div>
     </header>

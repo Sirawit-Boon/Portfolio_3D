@@ -111,7 +111,7 @@ export const myProjects = [
     subdesc:
       "With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.",
     href: "https://blogpost-sirawit.vercel.app/",
-    github:"https://github.com/Sirawit-Boon/sirawit-blogpost",
+    github: "https://github.com/Sirawit-Boon/sirawit-blogpost",
     texture: "/textures/project/Blogpost.mp4",
     logo: "/assets/blog.png",
     logoStyle: {
@@ -142,7 +142,7 @@ export const myProjects = [
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
-    deskScale: isSmall ? 1 : isMobile ? 1 : 1.7,
+    deskScale: isSmall ? 1 : isMobile ? 1 : isTablet ? 1.5 : 1.7,
     deskPosition: isSmall
       ? [0, -0.5, 2.0]
       : isMobile
@@ -153,14 +153,14 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
       : isMobile
       ? [2, -1, 0]
       : isTablet
-      ? [2, -1, 0]
+      ? [1, 2, 0]
       : [4, -2.5, 1.9],
     javascriptRotation: isSmall
       ? [4, -5, 0]
       : isMobile
       ? [5, -5, 0]
       : isTablet
-      ? [5, -5, 0]
+      ? [-4.5, -4.7, 0]
       : [1.6, -4.7, 0],
     javascriptScale: isSmall ? 0.02 : isMobile ? 0.03 : 0.04,
     reactLogoPosition: isSmall
@@ -168,15 +168,15 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
       : isMobile
       ? [2, 1.5, 0]
       : isTablet
-      ? [5, 4, 0]
+      ? [2, 2, 0]
       : [5, 2, 0],
-    reactScale: isSmall ? 0.005 : isMobile ? 0.005 : 0.01,
+    reactScale: isSmall ? 0.005 : isTablet ? 0.007 : 0.01,
     HtmlPosition: isSmall
       ? [-2, 1.5, -10]
       : isMobile
       ? [-3, 2, -10]
       : isTablet
-      ? [0, 1, 0]
+      ? [-2, 1.3, 0]
       : [-9, 1, -10],
     HtmlRotation: isSmall
       ? [1.5, -3.2, 1.5]
@@ -185,13 +185,13 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
       : isTablet
       ? [-1.5, 0, -1.5]
       : [-1.5, 0, -1.5],
-    HtmlScale: isSmall ? 0.005 : isMobile ? 0.005 : 0.01,
+    HtmlScale: isSmall ? 0.005 : isTablet ? 0.004 : 0.01,
     CssPosition: isSmall
       ? [-2, -1.5, -10]
       : isMobile
       ? [-3, 1, -10]
       : isTablet
-      ? [0, 1, 0]
+      ? [-1, 2, 0]
       : [-9, -7, -10],
     CssRotation: isSmall
       ? [1.5, -3.2, 1.5]
@@ -200,7 +200,7 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
       : isTablet
       ? [-1.5, 0, -1.5]
       : [-1.6, 0, -1.6],
-    CssScale: isSmall ? 0.005 : isMobile ? 0.005 : 0.01,
+    CssScale: isSmall ? 0.005 : isTablet ? 0.004 : 0.01,
   };
 };
 

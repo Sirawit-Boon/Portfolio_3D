@@ -78,11 +78,11 @@ const Contact = () => {
   };
   return (
     <section className="c-space my-20" id="contact" >
-      <div className="relative sm:min-h-screen h-[760px] flex items-center justify-center flex-col">
+      <div className="relative md:min-h-[1024px] h-[800px] flex items-center justify-center flex-col">
         <img
           src="/assets/terminal.png"
           alt="terminal background"
-          className="absolute inset-0 sm:min-h-screen h-full"
+          className="absolute h-full md:max-h-[1024px]"
         />
         <div className="contact-container">
           <h3 className="head-text">Let's talk</h3>
