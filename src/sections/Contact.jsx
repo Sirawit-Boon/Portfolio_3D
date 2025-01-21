@@ -39,6 +39,7 @@ const Contact = () => {
     window.gtag("event", "submit_contact_form", {
       event_category: "interaction",
       event_label: "Contact Form",
+      key_event: "true",
       value: 1,
     });
 

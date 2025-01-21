@@ -15,6 +15,14 @@ const About = () => {
     }
   }, []);
 
+  const handleDowload = () => {
+    window.gtag("event", "resume_download", {
+      event_category: "user_action",
+      event_label: "Resume Download Button",
+      key_event: "yes"
+    });
+  };
+
   const handleCopy = () => {
     navigator.clipboard.writeText("sirawit.boonthon@gmail.com");
 
@@ -178,6 +186,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="copy-container"
+              onClick={handleDowload}
             >
               <img
                 src="/assets/download.png"
