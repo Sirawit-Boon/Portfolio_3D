@@ -1,9 +1,25 @@
 import React from "react";
+import Navbar from "./sections/Navbar";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Project from "./sections/Project";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
+import Experience from "./sections/MyExperience";
+import useAnalyticsEvents from "./hooks/useAnalyticsEvents";
 
 const App = () => {
+  useAnalyticsEvents();
+  
   return (
-    <main className="max-w-7xl mx-auto border border-red-500">
-      <h1 className="text-2xl text-white underline">Hello Three</h1>
+    <main className="max-w-7xl mx-auto">
+      <Navbar />
+      <Hero />
+      <About />
+      <Project />
+      <Experience />
+      <Contact />
+      <Footer />
     </main>
   );
 };
